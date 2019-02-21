@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Vincent-Sheng&#39;s Blog">
 <meta property="og:description" content="Markdown简介Markdown是一种轻量级的标记语言，其用简单的标记语法便可达到排版的目的，其可以使我们更加专注于内容的编写，而不需过多关注排版。本文主要整理了 Markdown 中的常用的标记语法，以便自己与他人以后查用。 Hexo 是基于 GitHub 的博客平台，Github 中的文本格式是 .md，那么用 Hexo 写博客也必然要用到 Markdown。本文首先带你选择适合你的 Ma">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-16T10:21:57.229Z">
+<meta property="og:updated_time" content="2019-02-14T06:10:20.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="markdown笔记">
 <meta name="twitter:description" content="Markdown简介Markdown是一种轻量级的标记语言，其用简单的标记语法便可达到排版的目的，其可以使我们更加专注于内容的编写，而不需过多关注排版。本文主要整理了 Markdown 中的常用的标记语法，以便自己与他人以后查用。 Hexo 是基于 GitHub 的博客平台，Github 中的文本格式是 .md，那么用 Hexo 写博客也必然要用到 Markdown。本文首先带你选择适合你的 Ma">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-16T18:21:57+08:00">
-                2019-01-16
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-14T14:10:20+08:00">
+                2019-02-14
               </time>
             
           </span>
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3.1k 字
+                  3.4k 字
                 </span>
               
 
@@ -418,7 +418,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11 分钟
+                  13 分钟
                 </span>
               
             </div>
@@ -500,6 +500,17 @@
 <li>Parish</li>
 </ol>
 <p>很重要的一点是，数字并不会影响输出的 HTML 结果<br>你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;Bird&lt;/li&gt;</span><br><span class="line">&lt;li&gt;McHale&lt;/li&gt;</span><br><span class="line">&lt;li&gt;Parish&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Markdown中写注释"><a href="#Markdown中写注释" class="headerlink" title="Markdown中写注释"></a>Markdown中写注释</h2><h3 id="html标签"><a href="#html标签" class="headerlink" title="html标签"></a>html标签</h3><p>既然Markdown内嵌html语法，那么就可以用可以用隐藏的html标签。</p>
+<p><strong>注意：需要在前面空一行</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&apos;display: none&apos;&gt;</span><br><span class="line">哈哈我是注释，不会在浏览器中显示。</span><br><span class="line">我也是注释。</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="html注释"><a href="#html注释" class="headerlink" title="html注释"></a>html注释</h3><p>既然支持html语法，那也支持html注释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--哈哈我是注释，不会在浏览器中显示。--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">哈哈我是多段</span><br><span class="line">注释，</span><br><span class="line">不会在浏览器中显示。</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="hack方法"><a href="#hack方法" class="headerlink" title="hack方法"></a>hack方法</h3><p>hack方法就是利用markdown的解析原理来实现注释的。</p>
+<p>一般有的markdown解析器不支持上面的注释方法，这个时候就可以用hack方法。</p>
+<p>hack方法比上面2种方法稳定得多，但是语义化太差。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[comment]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[//]: &lt;&gt; (哈哈我是注释，不会在浏览器中显示。)</span><br><span class="line">[//]: # (哈哈我是注释，不会在浏览器中显示。)</span><br></pre></td></tr></table></figure></p>
+<p>其中，这种方法最稳定，适用性最强：</p>
+<p><code>[//]: # (哈哈我是注释，不会在浏览器中显示。)</code><br>这种方法最可爱，超级无敌萌啊：</p>
+<p><code>[^_^]: # (哈哈我是注释，不会在浏览器中显示。)</code></p>
 <h2 id="Markdown-代码区块"><a href="#Markdown-代码区块" class="headerlink" title="Markdown 代码区块"></a>Markdown 代码区块</h2><h3 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h3><p>用反引号 `  来标记内联代码，它们会解释成<code>&lt;code&gt;</code>标签。用两个反引号包裹即可<br>代码中的&amp;、&lt;、&gt;符号都会自动转义，请放心使用。<br>` 这是行内代码`<br>效果<br><code>这是行内代码</code></p>
 <h3 id="代码区域"><a href="#代码区域" class="headerlink" title="代码区域"></a>代码区域</h3><p>Markdown 会用 <code>&lt;pre&gt;</code> 和 <code>&lt;code&gt;</code> 标签来把代码区块包起来。<br>Markdown 中建立代码区块很简单<br>第一种缩进 4 个空格或是 1 个制表符就可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是一个普通段落：</span><br><span class="line"></span><br><span class="line">    这是一个代码区块。</span><br></pre></td></tr></table></figure></p>
 <p>Markdown 会转换成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是一个普通段落：&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;&lt;code&gt;这是一个代码区块。</span><br><span class="line">&lt;/code&gt;&lt;/pre&gt;</span><br></pre></td></tr></table></figure></p>
@@ -640,7 +651,9 @@
 </tr>
 </tbody>
 </table>
+<h3 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h3><p><a href="https://blog.csdn.net/wiborgite/article/details/78044656" target="_blank" rel="noopener">https://blog.csdn.net/wiborgite/article/details/78044656</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html" target="_blank" rel="noopener">https://www.w3cschool.cn/markdownyfsm/markdownyfsm-odm6256r.html</a><br><a href="https://wizardforcel.gitbooks.io/markdown-simple-world/2.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/markdown-simple-world/2.html</a><br><a href="http://xianbai.me/learn-md/article/about/readme.html" target="_blank" rel="noopener">http://xianbai.me/learn-md/article/about/readme.html</a></p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h3 id="markdown段落中如何产生缩进？"><a href="#markdown段落中如何产生缩进？" class="headerlink" title="markdown段落中如何产生缩进？"></a>markdown段落中如何产生缩进？</h3><p>半方大的空白<code>&amp;ensp;</code>或<code>&amp;#8194;</code><br>全方大的空白<code>&amp;emsp;</code>或<code>&amp;#8195;</code><br>不断行的空白格<code>&amp;nbsp;</code>或<code>&amp;#160;</code></p>
 
       
     </div>
@@ -762,7 +775,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -784,7 +797,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -827,7 +840,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown简介"><span class="nav-number">1.</span> <span class="nav-text">Markdown简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题-一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题(# 一级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题-二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题(## 二级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题-三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题(### 三级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题-四级标题"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">四级标题(#### 四级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题-五级标题"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">五级标题(##### 五级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题-六级标题"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">六级标题(###### 六级标题)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段落"><span class="nav-number">2.2.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">2.3.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">2.4.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这是一个标题。"><span class="nav-number">2.6.</span> <span class="nav-text">这是一个标题。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.7.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-代码区块"><span class="nav-number">2.8.</span> <span class="nav-text">Markdown 代码区块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行内代码"><span class="nav-number">2.8.1.</span> <span class="nav-text">行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码区域"><span class="nav-number">2.8.2.</span> <span class="nav-text">代码区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码语法高亮"><span class="nav-number">2.9.</span> <span class="nav-text">代码语法高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分隔线"><span class="nav-number">2.10.</span> <span class="nav-text">分隔线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.11.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片链接"><span class="nav-number">2.12.</span> <span class="nav-text">图片链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动链接"><span class="nav-number">2.13.</span> <span class="nav-text">自动链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义"><span class="nav-number">2.14.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.15.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单元格和表头"><span class="nav-number">2.15.1.</span> <span class="nav-text">单元格和表头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对齐"><span class="nav-number">2.15.2.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入其他内容"><span class="nav-number">2.15.3.</span> <span class="nav-text">插入其他内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown简介"><span class="nav-number">1.</span> <span class="nav-text">Markdown简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标题"><span class="nav-number">1.1.</span> <span class="nav-text">标题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一级标题-一级标题"><span class="nav-number">2.</span> <span class="nav-text">一级标题(# 一级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二级标题-二级标题"><span class="nav-number">2.1.</span> <span class="nav-text">二级标题(## 二级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三级标题-三级标题"><span class="nav-number">2.1.1.</span> <span class="nav-text">三级标题(### 三级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#四级标题-四级标题"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">四级标题(#### 四级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#五级标题-五级标题"><span class="nav-number">2.1.1.1.1.</span> <span class="nav-text">五级标题(##### 五级标题)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#六级标题-六级标题"><span class="nav-number">2.1.1.1.1.1.</span> <span class="nav-text">六级标题(###### 六级标题)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#段落"><span class="nav-number">2.2.</span> <span class="nav-text">段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗体和斜体"><span class="nav-number">2.3.</span> <span class="nav-text">粗体和斜体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除线"><span class="nav-number">2.4.</span> <span class="nav-text">删除线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">2.5.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这是一个标题。"><span class="nav-number">2.6.</span> <span class="nav-text">这是一个标题。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表"><span class="nav-number">2.7.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown中写注释"><span class="nav-number">2.8.</span> <span class="nav-text">Markdown中写注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#html标签"><span class="nav-number">2.8.1.</span> <span class="nav-text">html标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html注释"><span class="nav-number">2.8.2.</span> <span class="nav-text">html注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hack方法"><span class="nav-number">2.8.3.</span> <span class="nav-text">hack方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-代码区块"><span class="nav-number">2.9.</span> <span class="nav-text">Markdown 代码区块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#行内代码"><span class="nav-number">2.9.1.</span> <span class="nav-text">行内代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码区域"><span class="nav-number">2.9.2.</span> <span class="nav-text">代码区域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码语法高亮"><span class="nav-number">2.10.</span> <span class="nav-text">代码语法高亮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分隔线"><span class="nav-number">2.11.</span> <span class="nav-text">分隔线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">2.12.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片链接"><span class="nav-number">2.13.</span> <span class="nav-text">图片链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动链接"><span class="nav-number">2.14.</span> <span class="nav-text">自动链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转义"><span class="nav-number">2.15.</span> <span class="nav-text">转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">2.16.</span> <span class="nav-text">表格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单元格和表头"><span class="nav-number">2.16.1.</span> <span class="nav-text">单元格和表头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对齐"><span class="nav-number">2.16.2.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入其他内容"><span class="nav-number">2.16.3.</span> <span class="nav-text">插入其他内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并单元格"><span class="nav-number">2.16.4.</span> <span class="nav-text">合并单元格</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#markdown段落中如何产生缩进？"><span class="nav-number">4.0.1.</span> <span class="nav-text">markdown段落中如何产生缩进？</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -861,7 +874,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.2k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 

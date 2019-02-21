@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/007i4MEmgy1fz8uy15kkxj30mo062aaz.jpg">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/007i4MEmgy1fz8uzblj7tj310u03daa7.jpg">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/007i4MEmgy1fz8vae66rsj303m015gld.jpg">
-<meta property="og:updated_time" content="2019-01-16T16:27:22.216Z">
+<meta property="og:updated_time" content="2019-02-08T02:36:50.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NexT主题配置">
 <meta name="twitter:description" content="搭建好了hexo这个框架以后可以使用next主题来美化博客  为什么选择next? 知乎：有哪些好看的Hexo主题  在右上角或者左上角实现fork me on github具体实现方法点击 这里 或者 这里 挑选自己喜欢的样式，并复制代码。然后粘贴刚才复制的代码到themes/next/layout/_layout.swig文件中(放在&amp;lt;div class=&amp;quot;headband&amp;q">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-17T00:27:22+08:00">
-                2019-01-17
+              <time title="更新于" itemprop="dateModified" datetime="2019-02-08T10:36:50+08:00">
+                2019-02-08
               </time>
             
           </span>
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k 字
+                  2.1k 字
                 </span>
               
 
@@ -422,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -471,6 +471,20 @@
 <p>后面，修改后为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span title=&quot;&#123;&#123; __(&apos;post.wordcount&apos;) &#125;&#125;&quot;&gt;</span><br><span class="line">    &#123;&#123; wordcount(post.content) &#125;&#125; 字</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
 <p>同理，我们修改【阅读时长】，修改后如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span title=&quot;&#123;&#123; __(&apos;post.min2read&apos;) &#125;&#125;&quot;&gt;</span><br><span class="line">    &#123;&#123; min2read(post.content) &#125;&#125; 分钟</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
 <p>修改完成后，重新执行启动服务预览就可以了</p>
+<h3 id="添加分类及标签"><a href="#添加分类及标签" class="headerlink" title="添加分类及标签"></a>添加分类及标签</h3><p>nexT主题的文章分类和标签设置</p>
+<h4 id="生成“分类”页并添加tpye属性"><a href="#生成“分类”页并添加tpye属性" class="headerlink" title="生成“分类”页并添加tpye属性"></a>生成“分类”页并添加tpye属性</h4><p>打开命令行，进入博客所在文件夹。执行命令<br><code>$ hexo new page categories</code>成功后会提示：<code>INFO  Created: ~/Documents/blog/source/categories/index.md</code>根据上面的路径，找到index.md这个文件，打开后默认内容是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2017-05-27 13:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>添加type: “categories”到内容中，添加后是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2017-05-27 13:47:40</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>保存并关闭文件。</p>
+<h4 id="给文章添加“categories”属性"><a href="#给文章添加“categories”属性" class="headerlink" title="给文章添加“categories”属性"></a>给文章添加“categories”属性</h4><p>打开需要添加分类的文章，为其添加categories属性。下方的<code>categories: web前端</code>表示添加这篇文章到“web前端”这个分类。注意：hexo一篇文章只能属于一个分类，也就是说如果在“- web前端”下方添加“-xxx”，hexo不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories:</span><br><span class="line">- web前端</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>至此，成功给文章添加分类，点击首页的“分类”可以看到该分类下的所有文章。当然，只有添加了<code>categories: xxx</code>的文章才会被收录到首页的“分类”中。</p>
+<h4 id="生成“标签”页并添加tpye属性"><a href="#生成“标签”页并添加tpye属性" class="headerlink" title="生成“标签”页并添加tpye属性"></a>生成“标签”页并添加tpye属性</h4><p>打开命令行，进入博客所在文件夹。执行命令<code>$ hexo new page tags</code>成功后会提示：<code>INFO  Created: ~/Documents/blog/source/tags/index.md</code>根据上面的路径，找到<code>index.md</code>这个文件，打开后默认内容是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2017-05-27 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>添加<code>type: &quot;tags&quot;</code>到内容中，添加后是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2017-05-27 13:47:40</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>保存并关闭文件。</p>
+<h4 id="给文章添加“tags”属性"><a href="#给文章添加“tags”属性" class="headerlink" title="给文章添加“tags”属性"></a>给文章添加“tags”属性</h4><p>打开需要添加标签的文章，为其添加<code>tags</code>属性。下方的<code>tags:</code>下方的<code>- jQuery</code> <code>- 表格- 表单验证</code>就是这篇文章的标签了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">--</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories:</span><br><span class="line">- web前端</span><br><span class="line">tags:</span><br><span class="line">- jQuery</span><br><span class="line">- 表格</span><br><span class="line">- 表单验证</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<p>至此，成功给文章添加分类，点击首页的“标签”可以看到该标签下的所有文章。当然，只有添加了tags: xxx的文章才会被收录到首页的“标签”中。</p>
+<p>细心的朋友可能已经发现，这两个的设置几乎一模一样！是的，没错，思路都是一样的。所以我们可以打开scaffolds/post.md文件，在tages:上面加入categories:,保存后，之后执行<code>hexo new 文章名</code>命令生成的文件，页面里就有<code>categories:</code>项了。</p>
+<p>scaffolds目录下，是新建页面的模板，执行新建命令时，是根据这里的模板页来完成的，所以可以在这里根据你自己的需求添加一些默认值。</p>
+<p>教程结束，赶紧去设置吧！</p>
 <h3 id="修改文章底部的那个带-号的标签"><a href="#修改文章底部的那个带-号的标签" class="headerlink" title="修改文章底部的那个带#号的标签"></a>修改文章底部的那个带#号的标签</h3><p>具体实现方法<br>修改模板<code>/themes/next/layout/_macro/post.swig</code>，搜索 <code>rel=&quot;tag&quot;&gt;#</code>，将<code>#</code>换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code></p>
 <p>效果图：<br><img src="https://ww1.sinaimg.cn/large/007i4MEmgy1fz8vae66rsj303m015gld.jpg" alt=""></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT官网</a></p>
@@ -598,7 +612,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -620,7 +634,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -663,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在右上角或者左上角实现fork-me-on-github"><span class="nav-number">1.</span> <span class="nav-text">在右上角或者左上角实现fork me on github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单栏添加菜单-未验证，没试过"><span class="nav-number">2.</span> <span class="nav-text">菜单栏添加菜单(未验证，没试过)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用本地搜索"><span class="nav-number">3.</span> <span class="nav-text">启用本地搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为NexT主题添加canvas-nest背景特效"><span class="nav-number">4.</span> <span class="nav-text">为NexT主题添加canvas_nest背景特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改作者头像"><span class="nav-number">5.</span> <span class="nav-text">修改作者头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作者头像圆形并旋转"><span class="nav-number">6.</span> <span class="nav-text">作者头像圆形并旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站logo"><span class="nav-number">7.</span> <span class="nav-text">修改网站logo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">8.</span> <span class="nav-text">侧边栏社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首页文章列表不显示全文（只显示预览）"><span class="nav-number">9.</span> <span class="nav-text">设置首页文章列表不显示全文（只显示预览）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo添加字数统计、阅读时长"><span class="nav-number">10.</span> <span class="nav-text">Hexo添加字数统计、阅读时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章底部的那个带-号的标签"><span class="nav-number">11.</span> <span class="nav-text">修改文章底部的那个带#号的标签</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在右上角或者左上角实现fork-me-on-github"><span class="nav-number">1.</span> <span class="nav-text">在右上角或者左上角实现fork me on github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菜单栏添加菜单-未验证，没试过"><span class="nav-number">2.</span> <span class="nav-text">菜单栏添加菜单(未验证，没试过)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用本地搜索"><span class="nav-number">3.</span> <span class="nav-text">启用本地搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为NexT主题添加canvas-nest背景特效"><span class="nav-number">4.</span> <span class="nav-text">为NexT主题添加canvas_nest背景特效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改作者头像"><span class="nav-number">5.</span> <span class="nav-text">修改作者头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作者头像圆形并旋转"><span class="nav-number">6.</span> <span class="nav-text">作者头像圆形并旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改网站logo"><span class="nav-number">7.</span> <span class="nav-text">修改网站logo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏社交链接"><span class="nav-number">8.</span> <span class="nav-text">侧边栏社交链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置首页文章列表不显示全文（只显示预览）"><span class="nav-number">9.</span> <span class="nav-text">设置首页文章列表不显示全文（只显示预览）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo添加字数统计、阅读时长"><span class="nav-number">10.</span> <span class="nav-text">Hexo添加字数统计、阅读时长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加分类及标签"><span class="nav-number">11.</span> <span class="nav-text">添加分类及标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成“分类”页并添加tpye属性"><span class="nav-number">11.1.</span> <span class="nav-text">生成“分类”页并添加tpye属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给文章添加“categories”属性"><span class="nav-number">11.2.</span> <span class="nav-text">给文章添加“categories”属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成“标签”页并添加tpye属性"><span class="nav-number">11.3.</span> <span class="nav-text">生成“标签”页并添加tpye属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#给文章添加“tags”属性"><span class="nav-number">11.4.</span> <span class="nav-text">给文章添加“tags”属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改文章底部的那个带-号的标签"><span class="nav-number">12.</span> <span class="nav-text">修改文章底部的那个带#号的标签</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number"></span> <span class="nav-text">参考</span></a></li></div>
             
 
           </div>
@@ -697,7 +711,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.2k</span>
+    <span title="Site words total count">10.7k</span>
   
 </div>
 
